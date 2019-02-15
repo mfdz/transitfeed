@@ -71,11 +71,13 @@ setup(
         'and exporter.',
     platforms='OS Independent',
     license='Apache License, Version 2.0',
-    packages=['gtfsscheduleviewer', 'transitfeed'],
+    packages=['gtfsscheduleviewer', 'transitfeed', 'extensions', 
+        'extensions.googletransit', 'extensions.googletransit.pybcp47'],
     # Also need to list package_data contents in MANIFEST.in for it to be
     # included in sdist. See "[Distutils] package_data not used by sdist
     # command" Feb 2, 2007
-    package_data={'gtfsscheduleviewer': ['files/*']},
+    package_data={'gtfsscheduleviewer': ['files/*'],
+                  'extensions.googletransit.pybcp47':['*.txt']},
     scripts=scripts_for_py2exe + scripts_for_source_only,
     zip_safe=False,
     classifiers=[
